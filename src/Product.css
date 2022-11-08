@@ -30,7 +30,7 @@
     margin: 20px 0 0 15px;
   }
   
-  .product > button {
+  .product__button {
     background: #ff9f00;
     border: 1px solid;
     border-radius: 20px;

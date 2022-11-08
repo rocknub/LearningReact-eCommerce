@@ -1,8 +1,9 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import { Link } from "react-router-dom";
 
-function Product({id, title, image, price, rating}) {
+function Product({ id, title, image, price, rating }) {
 
     const [state, dispatch] = useStateValue();
 
@@ -28,18 +29,21 @@ function Product({id, title, image, price, rating}) {
                 </p>
                 <div className="product__rating">
                     {Array(rating)
-                    .fill()
-                    .map((_, i) => (
-                        <p>⭐</p>
-                    ))}
+                        .fill()
+                        .map((_, i) => (
+                            <p>⭐</p>
+                        ))}
                 </div>
             </div>
 
             <img src={image} />
 
-            <button onClick={addToBasket}>Add to Cart</button>
+            <Link to="/checkout">
+                <button onClick={addToBasket} className="product__button" >Add to Cart</button>
+            </Link>
+
         </div>
     )
 }
 
-export default Product
+export default Product;
