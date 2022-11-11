@@ -9,13 +9,12 @@ function Admin() {
         textAlign: "center",
     };
 
-    let saveProduct = () => {
-        let form = document.getElementById('registerProduct');
-        let data = new FormData(form);
+    const saveProduct = () => {
+        const form = document.getElementById('registerProduct');
+        const data = new FormData(form);
 
         fetch('./php/SaveProduct.php', {
             method: "POST",
-            headers: 'Accept: ',
             body: data
         })
     }

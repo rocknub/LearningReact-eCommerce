@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Login.css'
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@material-ui/icons/Storefront';
@@ -10,15 +10,26 @@ function Login() {
 
     const history = useHistory();
 
-    const validarCampos = () => {
+    const validateLogin = () => {
         let email = document.getElementById('email').value;
         let senha = document.getElementById('senha').value;
 
-        if (email === 'brian@brian.com.br' && senha === '123') {
-            history.push("/", "homepage");
+        if (email === 'b@b' && senha === '123') {
+            alert('Você logou como: Brian Mendes.'); //Add logged person name.
+            history.push("/admin", "adminpanel");
         } else {
             alert('Usuario ou senha incorretos!')
         }
+    }
+
+    const registerUser = () => {
+        const form = document.getElementById('userArea');
+        const data = new FormData(form);
+
+        fetch('./php/RegisterUser.php', {
+            method: "POST",
+            body: data
+        })
     }
 
     return (
@@ -33,21 +44,21 @@ function Login() {
             <div className='login__container'>
                 <h1>Sign-in</h1>
 
-                <form>
+                <form id="userArea">
                     <h5>E-mail</h5>
                     <input type='text' id='email' placeHolder='Type your e-mail...' />
 
                     <h5>Password</h5>
                     <input type='password' id='senha' placeHolder='Type your password...' />
 
-                    <button onClick={validarCampos} className='login__signInButton'>Sign In</button>
+                    <button onClick={validateLogin} className='login__signInButton'>Sign In</button>
                 </form>
 
                 <p style={pStyle}>
                     By signing-in you agree to the eShop Website Conditions of Use & Sale.
                 </p>
 
-                <button className='login__registerButton'>Create your eShop Account</button>
+                <button onClick={registerUser} className='login__registerButton'>Create your eShop Account</button>
             </div>
         </div>
     )

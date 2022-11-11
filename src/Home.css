@@ -1,5 +1,6 @@
 .home {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -20,4 +21,19 @@
     z-index: 1; 
     margin-left: 5px;  
     margin-right: 5px;
+}
+
+.redArea {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    width: 100%;
+    height: 450px;
+    margin: 0 0 50px;
+    border-radius: 20px;
+    background-color: red;
+}
+
+.redArea p {
+    padding: 20px;
 }

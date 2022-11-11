@@ -1,10 +1,12 @@
 import React from "react";
+import "./Home"
 import "./Header.css";
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import Home from "./Home";
 
 function Header() {
   const [{ basket }, dispatch] = useStateValue();
@@ -23,6 +25,9 @@ function Header() {
       <div className="header__search">
         <input type="text" className="header__searchInput" placeHolder="Insert search input..." />
         <SearchIcon className="header__searchIcon" />
+        <div className="header__test"> 
+          <button>Show Users</button>
+        </div>
       </div>
 
       <div className="header__nav">

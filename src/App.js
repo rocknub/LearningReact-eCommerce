@@ -3,6 +3,8 @@ import Home from "./Home";
 import Header from "./Header";
 import Checkout from "./Checkout";
 import Login from "./Login"
+import Admin from './Admin';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -15,6 +17,10 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>  
+
+          <Route path="/admin">
+            <Admin />
+          </Route>
 
           <Route path="/checkout">
             <Header />
