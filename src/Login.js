@@ -23,7 +23,7 @@ function Login() {
 
     function validateResult(data) {
         let email = document.getElementById('email').value;
-        let pw = document.getElementById('senha').value;
+        let pw = document.getElementById('pw').value;
 
         for (let i = 0; data.length; i++) {
             if (data[i].email === email && data[i].pw === pw) {
