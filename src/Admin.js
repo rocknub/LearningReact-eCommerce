@@ -13,7 +13,7 @@ function Admin() {
         const form = document.getElementById('registerProduct');
         const data = new FormData(form);
 
-        fetch('./php/SaveProduct.php', {
+        fetch('http://localhost:8888/php/saveProduct.php', {
             method: "POST",
             body: data
         })

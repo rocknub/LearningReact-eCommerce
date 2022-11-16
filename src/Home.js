@@ -1,22 +1,10 @@
 import React from "react";
+
 import "./Home.css";
+
 import Product from "./Product";
 
 function Home() {
-    const usuarios = [
-        {
-            nome: 'Brian',
-            email: 'b@b',
-        },
-        {
-            nome: 'Professor Lino',
-            email: 'professor@professor',
-        }
-    ]
-
-    const showNames = () => {
-        alert(usuarios.nome);
-    }
 
     return (
         <div className="home">
@@ -24,11 +12,15 @@ function Home() {
 
                 <img src="https://i.postimg.cc/ZqW9D6Dt/animated.gif " alt="" className="home__image" />
 
+                <div className="home_row">
+                    <div id="users" style={{ textAlign: 'center', backgroundColor: 'red', width: '60%', margin: 'auto' }}></div>
+                </div>
+
                 <div className="home__row">
                     <Product
                         id="6"
-                        title="ZOTAC Placa gráfica gamer GeForce RTX 4090 Trinity 24GB GDDR6X 384-bit 21 Gbps PCIE 4.0, refrigeração avançada IceStorm 3.0, iluminação RGB Spectra 2.0, ZT-D40900D-10P"
-                        price={892999.99}
+                        title="ZOTAC Placa gráfica gamer GeForce RTX 9090 Prime Robot Edition Trinity 2400GB GDDR9XzH 1384-bit 21000 Gbps PCIE 7.0, refrigeração avançada IceStorm 9.5"
+                        price={89299.99}
                         rating={5}
                         image="https://th.bing.com/th/id/R.e5b2a62f963833f83b13fcf817deb9f1?rik=vBgV%2fEdialym6g&pid=ImgRaw&r=0"
                     />
@@ -126,12 +118,6 @@ function Home() {
                     />
                 </div>
 
-            </div>
-
-            <div className="redArea">
-                <p>
-                    
-                </p>
             </div>
         </div>
     )

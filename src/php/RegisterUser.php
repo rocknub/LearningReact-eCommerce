@@ -1,16 +1,11 @@
 <?php
 
-$email = $_POST["email"];
-$password = $_POST["password"];
+    include 'connectsql.php';
 
-include "ConnectSql.php";
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $pw = $_POST['pw'];
 
-$query = mysqli_query($con, "INSERT INTO products (email, password) VALUES ('$email', '$password'");
-    
-if ($query) {
-    echo "<br>criar novo produto: funfou.";
-} else {
-    echo "<br>criar novo produto: não funfou.";
-}
+    $query = mysqli_query($con, "INSERT INTO users (nome, email, pw) VALUES ('$nome', '$email', '$pw')");
 
 ?>

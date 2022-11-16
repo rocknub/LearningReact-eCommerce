@@ -1,10 +1,9 @@
 <?php
 
-    $con = mysqli_connect("localhost:8889", "root", "root", "ecommerce");
+    error_reporting(E_ALL & ~E_NOTICE);
 
-    if ($con)
-        echo('conexao com o banco: conectado');
-    else
-        echo('conexao com o banco: não conectado');
+    header("Access-Control-Allow-Origin: *");
+
+    $con = mysqli_connect('localhost:8889', 'root', 'root', 'ecommerce');
 
 ?>

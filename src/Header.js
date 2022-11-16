@@ -6,10 +6,24 @@ import StorefrontIcon from '@material-ui/icons/Storefront';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
-import Home from "./Home";
 
 function Header() {
+  // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
+
+  const listProducts = () => {
+    
+    fetch('http://localhost:8888/php/listUsers.php', {
+      method: 'GET'
+    }).then(async function (response) {
+      let data = await response.json();
+
+      for (let i = 0; data.length; i++) {
+        document.getElementById('users').innerHTML += data[i].nome + "<br>";
+        console.log(data[i]);
+      }
+    })
+  }
 
   return (
     <div className="header">
@@ -25,8 +39,8 @@ function Header() {
       <div className="header__search">
         <input type="text" className="header__searchInput" placeHolder="Insert search input..." />
         <SearchIcon className="header__searchIcon" />
-        <div className="header__test"> 
-          <button>Show Users</button>
+        <div className="header__test">
+          <button className="redButton" onClick={listProducts}>Show Users</button>
         </div>
       </div>
 

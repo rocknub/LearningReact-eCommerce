@@ -1,18 +1,18 @@
 <?php
 
-    $title = $_POST["title"];
-    $imageurl = $_POST["imageurl"];
-    $price = $_POST["price"];
-    $rating = $_POST["rating"];
+    include 'connectsql.php';
 
-    include "ConnectSql.php";
+    $title = $_POST['title'];
+    $imageurl = $_POST['imageurl'];
+    $price = $_POST['price'];
+    $rating = $_POST['rating'];
 
-    $query = mysqli_query($con, "INSERT INTO products (title, imageurl, price, rating) VALUES ('$title', '$imageurl', '$price', '$rating'");
-        
-    if ($query) {
-        echo "<br>criar novo produto: funfou.";
+    $query = mysqli_query($con, "INSERT INTO products (title, imageurl, price, rating) VALUES ('$title', '$imageurl', '$price', '$rating')");
+
+    if($query) {
+        echo("Ok");
     } else {
-        echo "<br>criar novo produto: não funfou.";
+        echo("Error");
     }
-    
+
 ?>
